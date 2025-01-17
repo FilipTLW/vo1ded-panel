@@ -2,6 +2,7 @@ import {App, Astal, Gtk, Gdk, astalify} from "astal/gtk3"
 import {Variable} from "astal"
 import Launcher from "./Launcher";
 import SystemTray from "./SystemTray";
+import Workspaces from "./Workspaces";
 
 const time = Variable("").poll(1000, 'date "+%Y-%m-%d %H:%M:%S"')
 
@@ -9,8 +10,12 @@ const Separator = astalify(Gtk.Separator)
 
 function Start() {
     return <box
-      halign={Gtk.Align.START}>
+      halign={Gtk.Align.START}
+      className='start-container'
+    >
         <Launcher></Launcher>
+        <Separator orientation={Gtk.Orientation.VERTICAL} visible={true}/>
+        <Workspaces></Workspaces>
     </box>
 }
 

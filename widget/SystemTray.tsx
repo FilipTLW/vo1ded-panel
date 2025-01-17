@@ -17,20 +17,20 @@ export default function SystemTray() {
           return null;
         }
         return <button
+          className='tray-icon'
           tooltip_markup={bind(item, 'tooltip_markup')}
           valign={Gtk.Align.CENTER}
           halign={Gtk.Align.CENTER}
           onClickRelease={(self, event) => {
             switch (event.button) {
               case Astal.MouseButton.PRIMARY:
-                if (item.is_menu) {
-                  item.activate(0, 0);
-                }
+                item.activate(0, 0);
                 break;
               case Astal.MouseButton.SECONDARY:
                 const menu = Gtk.Menu.new_from_model(item.menu_model);
                 menu.insert_action_group('dbusmenu', item.actionGroup);
                 menu.popup_at_widget(self, Gdk.Gravity.NORTH, Gdk.Gravity.SOUTH, null);
+                break;
             }
           }}
         >
