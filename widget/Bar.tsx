@@ -3,6 +3,7 @@ import {Variable} from "astal"
 import Launcher from "./Launcher";
 import SystemTray from "./SystemTray";
 import Workspaces from "./Workspaces";
+import Settings from "./Settings";
 
 const time = Variable("").poll(1000, 'date "+%Y-%m-%d %H:%M:%S"')
 
@@ -33,6 +34,15 @@ function Center() {
     </box>
 }
 
+function End() {
+    return <box
+      className='end-container'
+      halign={Gtk.Align.END}
+    >
+        <Settings></Settings>
+    </box>
+}
+
 export default function Bar(gdkmonitor: Gdk.Monitor) {
     const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
 
@@ -45,6 +55,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         <centerbox>
             <Start></Start>
             <Center></Center>
+            <End></End>
         </centerbox>
     </window>
 }

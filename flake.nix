@@ -27,6 +27,8 @@
 
         # additional libraries and executables to add to gjs' runtime
         extraPackages = [
+          ags.packages.${system}.tray
+          ags.packages.${system}.hyprland
           # ags.packages.${system}.battery
           # pkgs.fzf
         ];
@@ -39,6 +41,9 @@
           # includes astal3 astal4 astal-io by default
           (ags.packages.${system}.default.override {
             extraPackages = [
+              ags.packages.${system}.tray
+              ags.packages.${system}.hyprland
+              ags.packages.${system}.astal3
               # cherry pick packages
             ];
           })

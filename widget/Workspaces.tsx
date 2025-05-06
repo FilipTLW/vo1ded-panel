@@ -21,7 +21,7 @@ export default function Workspaces() {
     valign={Gtk.Align.CENTER}
   >
     {bind(hyprland, 'focused_workspace').as(focused =>
-      [...Array(10).keys()].map(i =>
+      [...Array(20).keys()].map(i =>
         <button
           onClickRelease={`hyprctl dispatch workspace ${i + 1}`}
           className={getClassName(i, focused)}

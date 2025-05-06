@@ -1,0 +1,10 @@
+@import "globals";
+
+.settings-menu {
+  background: rgba($purple_1, .8);
+  border: 1px solid $purple_6;
+
+  box {
+    padding: .5em;
+  }
+}
