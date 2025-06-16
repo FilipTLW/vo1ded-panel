@@ -25,12 +25,10 @@
         name = "vo1ded-panel";
         entry = "app.ts";
 
-        # additional libraries and executables to add to gjs' runtime
         extraPackages = [
           ags.packages.${system}.tray
           ags.packages.${system}.hyprland
-          # ags.packages.${system}.battery
-          # pkgs.fzf
+          ags.packages.${system}.wireplumber
         ];
       };
     };
@@ -43,6 +41,7 @@
             extraPackages = [
               ags.packages.${system}.tray
               ags.packages.${system}.hyprland
+              ags.packages.${system}.wireplumber
               ags.packages.${system}.astal3
               # cherry pick packages
             ];

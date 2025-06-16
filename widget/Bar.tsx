@@ -4,10 +4,11 @@ import Launcher from "./Launcher";
 import SystemTray from "./SystemTray";
 import Workspaces from "./Workspaces";
 import Settings from "./Settings";
+import WirePlumber from "./WirePlumber";
 
 const time = Variable("").poll(1000, 'date "+%Y-%m-%d %H:%M:%S"')
 
-const Separator = astalify(Gtk.Separator)
+export const Separator = astalify(Gtk.Separator)
 
 function Start() {
     return <box
@@ -39,6 +40,7 @@ function End() {
       className='end-container'
       halign={Gtk.Align.END}
     >
+        <WirePlumber></WirePlumber>
         <Settings></Settings>
     </box>
 }
